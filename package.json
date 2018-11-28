@@ -1,7 +1,7 @@
 {
     "name": "intpack-zxy-test",
-    "version": "1.0.1",
-    "description": "first pack test",
+    "version": "1.0.2",
+    "description": "Verify password strength",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
