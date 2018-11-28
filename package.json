@@ -1,0 +1,23 @@
+{
+    "name": "intpack-zxy-test",
+    "version": "1.0.1",
+    "description": "first pack test",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/XinYuZhang1018/programmer.git"
+    },
+    "keywords": [
+        "test"
+    ],
+    "author": "zxy",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/XinYuZhang1018/programmer/issues"
+    },
+    "homepage": "https://github.com/XinYuZhang1018/programmer#readme",
+    "dependencies": {}
+}
