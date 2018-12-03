@@ -197,5 +197,42 @@ exports.single = {
                 })
             }
         }
+    },
+    dragtrip: (node, size) => {
+        var dragSwitch = false;
+        var objsize = {},
+            objnumber = null;
+        if (typeof size == Object) {
+            objsize.min = size.min;
+            objsize.max = size.max;
+        } else if (typeof size == Number) {
+            objnumber = size;
+        }
+
+        function dragSwitch(boolear) {
+            dragSwitch = boolear;
+            if (dragSwitch) {
+                const elem = document.getElementsByClassName('fourA-drag-midea')[0]
+                const leftelem = document.getElementsByClassName(node)[0]
+                let widthResult = null
+                window.onmousemove = function(ev) {
+                    widthResult = ev.clientX
+                    if (ev.clientX < objnumber == null ? objsize.min : objnumber)
+                        widthResult = objnumber == null ? objsize.min : objnumber
+                    else if (ev.clientX > (objsize.max || 500))
+                        widthResult = objsize.max || 500
+                    leftelem.style.width = widthResult + 'px'
+                    elem.setAttribute('style', 'position : fixed; left : ' + widthResult + 'px')
+                }
+            } else
+                window.onmousemove = null
+        }
+        var elems = `<div class="fourA-drag-midea" style="width: 5px; border-left: 1px solid #eee; height: 100%; margin: 0; padding: 0; cursor: ew-resize" onmousedown="dragSwitch(true)" onmouseup="dragSwitch(false)"></div>`;
+        document.getElementsByClassName(node)[0].appendChild(elems);
+
+        window.onmouseup = function() {
+            if (dragSwitch)
+                dragSwitch(false);
+        }
     }
 }
